@@ -1,6 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 def pascal_triangle(n):
+    '''Returns a lists of lists of pascals triangle'''
+
     ml = []
     if n <= 0:
         return []
