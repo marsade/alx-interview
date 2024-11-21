@@ -7,13 +7,13 @@ def rotate_2d_matrix(matrix):
     Args: (matrix) - matrix to be rotated
     Returns: (None) - matrix is rotated in place
     '''
-    l = len(matrix)
-    res = [[0] * l for _ in range(l)]
+    length = len(matrix)
+    res = [[0] * length for _ in range(length)]
 
-    for i in range(l):
-        for j in range(l):
-            res[j][l-1-i] = matrix[i][j]
+    for i in range(length):
+        for j in range(length):
+            res[j][length-1-i] = matrix[i][j]
 
-    for i in range(l):
-        for j in range(l):
+    for i in range(length):
+        for j in range(length):
             matrix[i][j] = res[i][j]
