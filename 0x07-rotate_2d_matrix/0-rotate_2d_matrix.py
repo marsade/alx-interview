@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 '''Rotate a 2D matrix'''
 
+
 def rotate_2d_matrix(matrix):
     '''Rotates a 2d matrix in place
-    
     Args: (matrix) - matrix to be rotated
     Returns: (None) - matrix is rotated in place
     '''
