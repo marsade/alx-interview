@@ -23,6 +23,3 @@ def validUTF8(data):
                 return False
             continuation_bytes -= 1
     return continuation_bytes == 0
-
-data = [240, 188, 128, 167]
-print(validUTF8(data))
