@@ -8,13 +8,13 @@ def validUTF8(data):
     continuation_bytes = 0
     for byte in data:
         if continuation_bytes == 0:
-            if byte & 0b10000000 == 0b0:
+            if byte & 0b10000000 == 0b00000000:
                 continue
-            elif byte & 0b11100000 == 0b110:
+            elif byte & 0b11100000 == 0b11000000:
                 continuation_bytes = 1
-            elif byte >> 11110000 == 0b1110:
+            elif byte & 0b11110000 == 0b111000000:
                 continuation_bytes = 2
-            elif byte >> 11111000 == 0b11110:
+            elif byte & 0b11111000 == 0b11110000:
                 continuation_bytes = 3
             else:
                 return False
@@ -23,3 +23,6 @@ def validUTF8(data):
                 return False
             continuation_bytes -= 1
     return continuation_bytes == 0
+
+data = [240, 188, 128, 167]
+print(validUTF8(data))
