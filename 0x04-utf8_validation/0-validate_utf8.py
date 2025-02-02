@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 '''UTF-8 Validation'''
 
-def validUTF8(data):
-    '''Checks if a given array of integers represents valid UTF-8 encoded data.'''
 
+def validUTF8(data):
+    '''Checks if a given array of integers represents
+    valid UTF-8 encoded data.'''
     continuation_bytes = 0
     for byte in data:
         if continuation_bytes == 0:
@@ -22,9 +23,3 @@ def validUTF8(data):
                 return False
             continuation_bytes -= 1
     return continuation_bytes == 0
-
-data = [80, 121, 116, 104, 111, 110, 32, 105, 115, 32, 99, 111, 111, 108, 33]
-print(validUTF8(data))
-
-data = [229, 65, 127, 256]
-print(validUTF8(data))
